@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo -e "Running the Case\n"
+
+decomposePar
+
+mpirun -np 3 interFoam -parallel > log &

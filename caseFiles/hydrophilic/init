@@ -1,0 +1,8 @@
+#!/bin/bash
+echo -e "Meshing"
+blockMesh >&1 | tee log.mesh
+cp -r 0.orig 0
+
+echo -e "Setting up boundaries and case"
+changeDictionary >&1 | tee log.changeDictionary
+setFields >&1 | tee log.setFields
